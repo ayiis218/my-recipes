@@ -1,6 +1,5 @@
-'use client'
-
 import { ChangeEvent, ReactNode } from "react"
+import Helpertext from "./helpertext"
 
 interface IProps {
    classnameLabel?: string
@@ -12,10 +11,12 @@ interface IProps {
    type?: string
    label?: string
    value?: string | number | readonly string[] | undefined
-   onchange: (event: ChangeEvent<HTMLInputElement>) => void
+   onChange: (event: ChangeEvent<HTMLInputElement>) => void
    startAdornment?: ReactNode
    endAdornment?: ReactNode
    helpertext?: string
+   maxLength?: string
+   iconHelper?: ReactNode
 }
 
 export default function Textfield(props: IProps) {
@@ -31,10 +32,10 @@ export default function Textfield(props: IProps) {
          )}
          <div className="w-full flex flex-col py-1 ">
             <div className={
-               "flex flex-row items-center border rounded-md " +
+               "flex flex-row items-center rounded-md " +
                (props.disabled
-                  ? "bg-gray-200 border border-[#B5B6B6] text-slate-400 "
-                  : "bg-white text-slate-600 ") +
+                  ? "bg-gray-200 border-[#B5B6B6] text-slate-400 "
+                  : "bg-white text-slate-600 h-[40px] ") +
                (props.validation
                   ? "border-red-600 "
                   : ""
@@ -48,12 +49,15 @@ export default function Textfield(props: IProps) {
                      "border-none bg-transparent " +
                      (props.classnameField ?? "")}
                   value={props.value}
-                  onChange={props.onchange}
+                  onChange={props.onChange}
                />
                {props.endAdornment}
             </div>
             {props.helpertext && (
-               <span>helpertext</span>
+               <Helpertext
+                  maxLength={props.maxLength}
+                  textHelper={props.helpertext}
+                  startAdornment={props.iconHelper} />
             )}
          </div>
       </div>
