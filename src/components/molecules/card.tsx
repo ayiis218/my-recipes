@@ -1,7 +1,9 @@
 'use client'
 
+import { ReactNode } from "react"
+
 interface IProps {
-   children: string
+   children: ReactNode
    classname?: string
 }
 

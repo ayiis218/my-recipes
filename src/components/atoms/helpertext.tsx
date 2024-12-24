@@ -10,8 +10,7 @@ interface IProps {
 export default function Helpertext(props: IProps) {
    return (
       <div className={
-         "w-full flex flex-wrap p-1 gap-1 "
-      }>
+         "w-full flex flex-wrap p-1 gap-1 "}>
          <div className="w-full flex flex-row gap-1 ">
             {props.startAdornment}
             <span className={
