@@ -30,7 +30,7 @@ export default function Textfield(props: IProps) {
                {props.label}
             </span>
          )}
-         <div className="w-full flex flex-col py-1 ">
+         <div className="w-full flex flex-col">
             <div className={
                "flex flex-row items-center rounded-md " +
                (props.disabled
@@ -46,7 +46,7 @@ export default function Textfield(props: IProps) {
                   name={props.name}
                   type={props.type ?? "text"}
                   className={
-                     "border-none bg-transparent " +
+                     "w-full p-2 border rounded-md" +
                      (props.classnameField ?? "")}
                   value={props.value}
                   onChange={props.onChange}

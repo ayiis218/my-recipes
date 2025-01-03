@@ -26,7 +26,7 @@ const Card = ({ emoji, hueA, hueB, i }: CardProps) => {
    return (
       <motion.div
          className={
-            `card-container-${i} overflow-hidden mb-[120px] ` +
+            `card-container-${i} overflow-hidden pt-5 mb-[120px] ` +
             "flex justify-center items-center relative "
          }
          initial="offscreen"
