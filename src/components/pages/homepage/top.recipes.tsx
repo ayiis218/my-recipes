@@ -33,7 +33,7 @@ export default function Top_Recipes() {
                            <SVG_HotRecipes />
                            <Typography variant="subtitle6"> Hot Recipes </Typography>
                         </div>
-                        <Typography className="mt-7 text-[84px] text-[#000000] font-bold ">Spicy delicious chicken wings</Typography>
+                        <Typography className="text-[82px] text-[#000000] font-bold mt-7 ">Spicy delicious chicken wings</Typography>
                         <Typography variant="subtitle5" className="mt-4 text-[#0B0A0A] ">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </Typography>
                      </div>
                   </div>
