@@ -1,11 +1,20 @@
 'use client'
 
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { SVG_Logo } from "../svg/svg.header"
-import { SVG_Facebook, SVG_Instagram, SVG_Twitter } from "../svg/svg.social.media"
+import SosialMediaList from "./sosial.media.list"
+
+const header = [
+   { name: "Home", path: "/homepage" },
+   { name: "Recipes", path: "/recipes" },
+   { name: "Blog", path: "/blog" },
+   { name: "Contact", path: "/contact" },
+   { name: "About Us", path: "/about" },
+]
 
 export default function Header() {
    const router = useRouter()
+   const pathname = usePathname()
 
    return (
       <header className="w-full flex flex-row items-center p-4 border-1 bg-white shadow-md mb-2 sticky top-0 z-50 ">
@@ -13,17 +22,19 @@ export default function Header() {
             <SVG_Logo onClick={() => router.push("/")} />
          </div>
          <div className="w-full flex flex-row  justify-center items-center p-1 gap-5 ">
-            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/")}>Home</span>
-            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/recipes")}>Recipes</span>
-            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/blog")}>Blog</span>
-            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/contact")}>Contact</span>
-            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/about")}>About Us</span>
+            {header.map((item, index) => {
+               const active = pathname === item.path ? "text-blue-500" : "text-black"
+               return (
+                  <span
+                     key={index}
+                     className={"text-lg font-bold cursor-pointer " + (active)}
+                     onClick={() => router.push(item.path)}>
+                     {item.name}
+                  </span>
+               )
+            })}
          </div>
-         <div className="w-full flex flex-row justify-end items-center p-1 gap-8 ">
-            <SVG_Facebook classname="cursor-pointer " />
-            <SVG_Twitter classname="cursor-pointer " />
-            <SVG_Instagram classname="cursor-pointer " />
-         </div>
+         <SosialMediaList />
       </header>
    )
 }
