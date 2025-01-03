@@ -14,15 +14,15 @@ export default function Header() {
          </div>
          <div className="w-full flex flex-row  justify-center items-center p-1 gap-5 ">
             <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/")}>Home</span>
-            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/about")}>Recipes</span>
-            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/contact")}>Blog</span>
-            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/about")}>Contact</span>
-            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/contact")}>About Us</span>
+            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/recipes")}>Recipes</span>
+            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/blog")}>Blog</span>
+            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/contact")}>Contact</span>
+            <span className="text-lg font-bold cursor-pointer " onClick={() => router.push("/about")}>About Us</span>
          </div>
          <div className="w-full flex flex-row justify-end items-center p-1 gap-8 ">
-            <SVG_Facebook />
-            <SVG_Twitter />
-            <SVG_Instagram />
+            <SVG_Facebook classname="cursor-pointer " />
+            <SVG_Twitter classname="cursor-pointer " />
+            <SVG_Instagram classname="cursor-pointer " />
          </div>
       </header>
    )

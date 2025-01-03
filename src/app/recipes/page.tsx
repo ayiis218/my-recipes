@@ -1,9 +1,7 @@
 'use server'
 
+import Recipes from "@/components/pages/recipes/page"
+
 export default async function Page_Recipe() {
-   return (
-      <div className="">
-         <h3>Page Recipe</h3>
-      </div>
-   )
+   return <Recipes />
 }
