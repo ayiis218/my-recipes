@@ -1,5 +1,6 @@
 import { ChangeEvent, ReactNode } from "react"
 import Helpertext from "./helpertext"
+import Typography from "./typography"
 
 interface IProps {
    classnameLabel?: string
@@ -8,6 +9,7 @@ interface IProps {
    disabled?: boolean
    validation?: string
    name: string
+   placeholder?: string
    type?: string
    label?: string
    value?: string | number | readonly string[] | undefined
@@ -23,12 +25,12 @@ export default function Textfield(props: IProps) {
    return (
       <div className="w-full flex flex-col py-2 ">
          {props.label && (
-            <span className={
-               (props.classnameLabel ?? "") +
+            <Typography variant="subtitle4" className={
+               (props.classnameLabel ?? "") + "m-1 " +
                (props.mandatory && "after:content-['*'] after:mx-1 after:text-[#EC1E1E] ")
             }>
                {props.label}
-            </span>
+            </Typography>
          )}
          <div className="w-full flex flex-col">
             <div className={
@@ -44,6 +46,7 @@ export default function Textfield(props: IProps) {
                <input
                   disabled={props.disabled}
                   name={props.name}
+                  placeholder={props.placeholder}
                   type={props.type ?? "text"}
                   className={
                      "w-full p-2 border rounded-md" +

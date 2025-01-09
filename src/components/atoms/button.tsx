@@ -6,7 +6,7 @@ interface IProps {
    disabled?: boolean
    loading?: boolean
    name: string
-   classname?: string
+   className?: string
    variant?: string
    color?: string
    onClick: () => void
@@ -55,8 +55,8 @@ export default function Button(props: IProps) {
          disabled={props.disabled}
          name={props.name}
          className={
-            "flex flex-row items-center p-2 rounded-md " +
-            (props.classname ?? "") +
+            "flex flex-row items-center justify-center p-2 rounded-md " +
+            (props.className ?? "") +
             variant()
          }
          onClick={props.onClick}

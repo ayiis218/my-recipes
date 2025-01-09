@@ -1,47 +1,28 @@
 'use client'
 
-import { ChangeEvent } from "react"
-import Textfield from "../atoms/textfield"
+import Button from "../atoms/button"
+import { ChangeEvent, ReactNode } from "react"
 
 interface IProps {
    titile?: string
-   handleSubmit?: () => void
+   handleSubmit: () => void
    onInputField: (event: ChangeEvent<HTMLInputElement>) => void
-   form?: any
+   children: ReactNode
+   buttonName?: string
+   loading?: boolean
 }
 
 export default function Form(props: IProps) {
    return (
       <div className="w-full flex flex-col p-2 gap-3 ">
          <span className="text-md align-center ">{props.titile}</span>
-         <form className="flex flex-col" onSubmit={props.handleSubmit}>
-            <Textfield
-               label="Name"
-               name=""
-               value={props.form?.name}
-               onChange={props.onInputField} />
-            <Textfield
-               label="Email"
-               name=""
-               value={props.form?.email}
-               onChange={props.onInputField} />
-            <Textfield
-               label="Subject"
-               name=""
-               value={props.form?.name}
-               onChange={props.onInputField} />
-            <Textfield
-               label="Enquiry type"
-               name=""
-               value={props.form?.enquiry}
-               onChange={props.onInputField} />
-            <Textfield
-               label="Message"
-               name=""
-               value={props.form?.message}
-               onChange={props.onInputField} />
-            <button type="submit" className="bg-blue-500 text-white rounded-md p-2 ">Submit</button>
-         </form>
-      </div>
+         {props.children}
+         <Button
+            name="btn-create"
+            className="bg-blue-500 text-white rounded-md p-2 "
+            onClick={props.handleSubmit}>
+            {props.loading ? "Loading..." : props.buttonName}
+         </Button>
+      </div >
    )
 }
