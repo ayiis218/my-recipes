@@ -15,8 +15,7 @@ export default function ProgressBarProvider({ children }: IProps) {
             height="4px"
             color="#fffd00"
             options={{ showSpinner: false }}
-            shallowRouting
-         />
+            shallowRouting />
       </>
    )
 }

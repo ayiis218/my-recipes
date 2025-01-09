@@ -18,8 +18,8 @@ export default function Favorite_Recipes() {
                   <li
                      key={item.label}
                      className={
-                        "flex flex-1 w-full relative bg-white justify-between items-center list-none " +
-                        "py-2 px-4 rounded-md cursor-pointer " +
+                        "flex flex-1 w-full relative bg-white justify-between " +
+                        "items-center list-none py-2 px-4 rounded-md cursor-pointer " +
                         (item === selectedTab
                            ? "bg-[#eee] "
                            : "")}
@@ -28,12 +28,8 @@ export default function Favorite_Recipes() {
                      {`${item.icon} ${item.label}`}
                      {item === selectedTab ? (
                         <motion.div
-                           className={
-                              "absolute bottom-0 left-0 w-full h-1 bg-[#8855ff] "
-                           }
-                           layoutId={
-                              "absolute bottom-0 left-0 w-full h-1 bg-[#8855ff] "
-                           } />
+                           className={"absolute bottom-0 left-0 w-full h-1 bg-[#8855ff] "}
+                           layoutId={"absolute bottom-0 left-0 w-full h-1 bg-[#8855ff] "} />
                      ) : null}
                   </li>
                ))}

@@ -18,8 +18,9 @@ export default function Form(props: IProps) {
          <span className="text-md align-center ">{props.titile}</span>
          {props.children}
          <Button
+            disabled={props.loading}
             name="btn-create"
-            className="bg-blue-500 text-white rounded-md p-2 "
+            className="bg-blue-500 text-white rounded-md p-2 mt-3 "
             onClick={props.handleSubmit}>
             {props.loading ? "Loading..." : props.buttonName}
          </Button>
