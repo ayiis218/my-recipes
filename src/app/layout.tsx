@@ -4,6 +4,7 @@ import "./globals.css";
 import ProgressBarProvider from "@/components/provider";
 import Header from "@/components/molecules/header";
 import Footer from "@/components/molecules/footer";
+import IconTop from "@/components/atoms/icon.top";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
 				<ProgressBarProvider>
 					<Header />
 					{children}
+					<IconTop />
 					<Footer />
 				</ProgressBarProvider>
 			</body>
