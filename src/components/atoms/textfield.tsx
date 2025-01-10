@@ -23,7 +23,7 @@ interface IProps {
 
 export default function Textfield(props: IProps) {
    return (
-      <div className="w-full flex flex-col py-2 ">
+      <div className="w-full flex flex-col py-1 ">
          {props.label && (
             <Typography variant="subtitle4" className={
                (props.classnameLabel ?? "") + "m-1 " +

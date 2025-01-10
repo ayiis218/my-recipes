@@ -4,8 +4,9 @@ import Content from "@/components/molecules/content"
 import Form from "@/components/molecules/form"
 import Textfield from "@/components/atoms/textfield"
 import { ChangeEvent, Fragment, useEffect, useState, useTransition } from "react"
-import { E_Form } from "./constant"
+import { E_Form, E_Recipes } from "./constant"
 import { capitalizeWords } from "@/utils/text.transform"
+import { emitter } from "@/components/client.emitter"
 
 export interface IForm {
    name?: string
@@ -79,9 +80,7 @@ export default function CardForm() {
    }
 
    const onSubmit = () => {
-      if (validateForm()) {
-         console.log(formValue)
-      }
+      emitter.emit(E_Recipes.SUBMIT, formValue)
    }
 
    return (

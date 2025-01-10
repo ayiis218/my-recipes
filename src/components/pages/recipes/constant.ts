@@ -9,3 +9,7 @@ export enum E_Form {
    enquiry = 'enquiry',
    message = 'message',
 }
+
+export enum E_Recipes {
+   SUBMIT = 'event.submit.recipe',
+}
